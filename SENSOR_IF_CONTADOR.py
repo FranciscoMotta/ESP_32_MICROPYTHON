@@ -16,7 +16,11 @@ while True:
         time.sleep_ms(50)
         if (contador == 30):
             print("ALERTA! MUCHAS PERSONAS")
-            contador = 0
+            while True:
+                led.on()
+                time.sleep_ms(1000)
+                led.off()
+                time.sleep_ms(1000)
         else:
             contador = contador + 1
         print("Numero de interferencias:", contador)
