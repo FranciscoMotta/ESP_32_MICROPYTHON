@@ -74,20 +74,20 @@ def number_Displayer(numero):
         segmentoG.off()
 
 while True:
-
-    v = adc.read()
-    if v < 600:
+    # TENEMOS QUE PONER EL FORMA DE TUPLA PARA PODER PLOTEAR
+    v = (adc.read(),0,4095)
+    if adc.read() < 600:
         number_Displayer(0)
-    elif v < 1200:
+    elif adc.read() < 1200:
         number_Displayer(1)
-    elif v < 1800:
+    elif adc.read() < 1800:
         number_Displayer(2)
-    elif v < 2400:
+    elif adc.read() < 2400:
         number_Displayer(3)
-    elif v < 3000:
+    elif adc.read() < 3000:
         number_Displayer(4)
-    elif v < 4000:
+    elif adc.read() < 4000:
         number_Displayer(5)
 
-    print("El valor analogo es: ", v)
+    print(v)
     time.sleep_ms(500)# Escribe tu código aquí :-)
